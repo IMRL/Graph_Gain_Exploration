@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+  <robot name="Robot1">
+    <link name="base_link">
+      <visual>
+        <geometry>
+          <box size="2 1 0.5"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0.05"/>
+        <material name="white">
+          <color rgba="255 0 0 255"/>
+        </material>
+      </visual>
+    </link>
+
+    <link name="wheel_1">
+      <visual>
+        <geometry>
+          <cylinder length="0.1" radius="0.3"/>
+        </geometry>
+        <origin rpy="1.5 0 0" xyz="0.5 0.5 0"/>
+          <material name="black">
+            <color rgba="0 0 0 1"/>
+          </material>
+      </visual>
+    </link>
+
+    <link name="wheel_2">
+      <visual>
+        <geometry>
+          <cylinder length="0.1" radius="0.3"/>
+        </geometry>
+        <origin rpy="1.5 0 0" xyz="-0.5 0.5 0"/>
+        <material name="black"/>
+      </visual>
+    </link>
+    <link name="wheel_3">
+      <visual>
+        <geometry>
+          <cylinder length="0.1" radius="0.3"/>
+        </geometry>
+        <origin rpy="1.5 0 0" xyz="0.5 -0.5 0"/>
+        <material name="black"/>
+      </visual>
+    </link>
+
+    <link name="wheel_4">
+      <visual>
+        <geometry>
+          <cylinder length="0.1" radius="0.3"/>
+        </geometry>
+        <origin rpy="1.5 0 0" xyz="-0.5 -0.5 0"/>
+        <material name="black"/>
+      </visual>
+    </link>
+
+    <joint name="base_to_wheel1" type="fixed">
+      <parent link="base_link"/>
+      <child link="wheel_1"/>
+      <origin xyz="0 0 0"/>
+    </joint>
+
+    <joint name="base_to_wheel2" type="fixed">
+      <parent link="base_link"/>
+      <child link="wheel_2"/>
+      <origin xyz="0 0 0"/>
+    </joint>
+
+    <joint name="base_to_wheel3" type="fixed">
+      <parent link="base_link"/>
+      <child link="wheel_3"/>
+      <origin xyz="0 0 0"/>
+    </joint>
+
+    <joint name="base_to_wheel4" type="fixed">
+      <parent link="base_link"/>
+      <child link="wheel_4"/>
+      <origin xyz="0 0 0"/>
+    </joint>
+  </robot>

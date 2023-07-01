@@ -1,0 +1,9 @@
+fragment_program chunk_map/glsl120/chunk_cell.frag glsl
+{
+  source chunk_cell.frag
+}
+
+vertex_program chunk_map/glsl120/chunk_cell.vert glsl
+{
+  source chunk_cell.vert
+}

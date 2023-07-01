@@ -1,0 +1,5 @@
+---
+# uint32[] img_size # rows, cols
+# uint32[] T_size # rows, cols
+# uint32[] M_size # rows, cols
+KeyFrameInfo[] key_frames

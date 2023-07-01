@@ -1,0 +1,17 @@
+<launch>
+    <!-- <param name="/use_sim_time" value="true" /> -->
+    <node pkg="localization" type="localization_node" name="localization" output="screen">
+    </node>
+    <node pkg="rviz" type="rviz" name="rviz" output="screen" />
+    
+    <!-- Parameters -->
+    <rosparam file="$(find localization)/launch/params.yaml" command="load" />
+
+    <node pkg="robot_localization" type="ekf_localization_node" name="ekf_imu" respawn="true">
+    </node>
+    <!-- x y z qx qy qz qw -->
+    <node pkg="tf" type="static_transform_publisher" name="imu_2_base_link_lidar" args="-0.000460435573 -0.00910183521 0.124849061 0.0193791 -0.0142923 0.7071965 0.7066069 base_link_lidar imu 100" />
+    <node pkg="tf" type="static_transform_publisher" name="odom_2_map" args="0 0 0 0 0 0 map odom 100" />
+    <!-- <node pkg="tf" type="static_transform_publisher" name="foot_2_lidar" args="0 0 0 0 0 0 base_link_lidar base_link 100" /> -->
+    <node pkg="tf" type="static_transform_publisher" name="foot_2_lidar" args="0 0 0 1.57 0 0 base_link_lidar base_link 100" />
+</launch>

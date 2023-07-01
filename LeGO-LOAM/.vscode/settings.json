@@ -1,0 +1,16 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/ysc/chunkmap_ws/chunkmap_20221210_szz/devel/lib/python3/dist-packages",
+        "/home/ysc/deeprobotics_perception/drivers/devel/lib/python2.7/dist-packages",
+        "/home/ysc/jueying_mapping_localization_ws/devel/lib/python2.7/dist-packages",
+        "/home/ysc/rslidar_driver/devel/lib/python2.7/dist-packages",
+        "/opt/ros/kinetic/lib/python2.7/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/ysc/chunkmap_ws/chunkmap_20221210_szz/devel/lib/python3/dist-packages",
+        "/home/ysc/deeprobotics_perception/drivers/devel/lib/python2.7/dist-packages",
+        "/home/ysc/jueying_mapping_localization_ws/devel/lib/python2.7/dist-packages",
+        "/home/ysc/rslidar_driver/devel/lib/python2.7/dist-packages",
+        "/opt/ros/kinetic/lib/python2.7/dist-packages"
+    ]
+}

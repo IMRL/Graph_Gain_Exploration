@@ -1,0 +1,12 @@
+<launch>
+    <param name="/use_sim_time" value="false" />
+    <!-- <param name="/use_sim_time" value="true" /> -->
+    <!-- <arg name="save_path" default="/tmp/garden.chunkmap" /> -->
+    <arg name="save_path" default="/tmp/garden_partial.chunkmap" />
+    <!-- <arg name="save_path" default="/tmp/gara3.chunkmap" /> -->
+    <!-- <arg name="save_path" default="/ros_ws/gd-with-apply/gara.chunkmap" /> -->
+    <node pkg="static_map_server" type="static_map_server_node" name="static_map_server" output="screen">
+        <param name="save_path" value="$(arg save_path)" />
+    </node>
+    <!-- <node pkg="rviz" type="rviz" name="rviz" output="screen" /> -->
+</launch>

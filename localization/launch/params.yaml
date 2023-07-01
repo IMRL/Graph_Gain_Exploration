@@ -1,0 +1,52 @@
+# EKF for Navsat
+ekf_imu:
+  publish_tf: true
+  map_frame: map
+  odom_frame: odom
+  base_link_frame: base_link_lidar
+  world_frame: odom
+
+  frequency: 50
+  two_d_mode: true
+  sensor_timeout: 0.01
+  # -------------------------------------
+  # External IMU:  # dog-top
+  # -------------------------------------
+  imu0: imu/data
+  # make sure the input is aligned with ROS REP105. "imu_correct" is manually transformed by myself. EKF can also transform the data using tf between your imu and base_link
+  imu0_config: [false, false, false,
+                false, false, false,
+                false, false, false,
+                true,  true,  true,
+                true,  true,  true]
+  imu0_differential: false
+  imu0_queue_size: 50 
+  imu0_remove_gravitational_acceleration: true
+  # -------------------------------------
+  # Odometry (From slam odom input):
+  # -------------------------------------
+  odom0: odometry
+  odom0_config: [true,  true,  true,
+                 true,  true,  true,
+                 true,  true,  true,
+                 false, false, false,
+                 false, false, false]
+  odom0_differential: false
+  odom0_queue_size: 10
+
+  #                            x     y     z     r     p     y   x_dot  y_dot  z_dot  r_dot p_dot y_dot x_ddot y_ddot z_ddot
+  process_noise_covariance: [  1.0,  0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,    0,    0,      0,
+                               0,    1.0,  0,    0,    0,    0,    0,     0,     0,     0,    0,    0,    0,    0,      0,
+                               0,    0,    1.0,  0,    0,    0,    0,     0,     0,     0,    0,    0,    0,    0,      0,
+                               0,    0,    0,    0.03, 0,    0,    0,     0,     0,     0,    0,    0,    0,    0,      0,
+                               0,    0,    0,    0,    0.03, 0,    0,     0,     0,     0,    0,    0,    0,    0,      0,
+                               0,    0,    0,    0,    0,    0.1,  0,     0,     0,     0,    0,    0,    0,    0,      0,
+                               0,    0,    0,    0,    0,    0,    0.25,  0,     0,     0,    0,    0,    0,    0,      0,
+                               0,    0,    0,    0,    0,    0,    0,     0.25,  0,     0,    0,    0,    0,    0,      0,
+                               0,    0,    0,    0,    0,    0,    0,     0,     0.04,  0,    0,    0,    0,    0,      0,
+                               0,    0,    0,    0,    0,    0,    0,     0,     0,     0.01, 0,    0,    0,    0,      0,
+                               0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0.01, 0,    0,    0,      0,
+                               0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0.5,  0,    0,      0,
+                               0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,    0.01, 0,      0,
+                               0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,    0,    0.01,   0,
+                               0,    0,    0,    0,    0,    0,    0,     0,     0,     0,    0,    0,    0,    0,      0.015]

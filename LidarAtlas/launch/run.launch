@@ -1,0 +1,18 @@
+<launch>
+    <arg name="save_path" default="" />
+    <param name="/use_sim_time" value="false" />
+    <node pkg="lidar_atlas" type="lidar_atlas_node" name="lidar_atlas" output="screen">
+        <param name="save_path" value="$(arg save_path)" />
+        <param name="indexed_points_topic" value="/points_indexed" />
+        <param name="poses_topic" value="/global_poses" />
+        <param name="hit_probability" value="0.38" />
+        <!-- <param name="hit_probability" value="0.42" /> -->
+        <!-- <param name="hit_probability" value="0.32" /> -->
+        <!-- <param name="miss_probability" value="0.55" /> -->
+        <param name="miss_probability" value="0.51" />
+        <param name="resolution" value="0.3" />
+        <param name="submap_radius" value="15" />
+    </node>
+    <node pkg="tf" type="static_transform_publisher" name="vscan_to_base" args="0 0 0 -1.57 0 0 base_link virtual_scan 10" />
+    <!-- <node pkg="rviz" type="rviz" name="rviz" output="screen" /> -->
+</launch>

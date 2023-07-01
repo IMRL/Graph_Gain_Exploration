@@ -1,0 +1,4 @@
+ChunkIndex[] index
+---
+bool[] has_chunk
+ChunkData[] data

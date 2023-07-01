@@ -1,0 +1,17 @@
+<launch>
+    <node pkg="ogm_sender" type="ogm_sender_node" name="ogm_sender_" output="screen">
+        <!-- <param name="free_bound" value="33" /> -->
+        <!-- <param name="occu_bound" value="51" /> -->
+        <param name="free_bound" value="49.5" />
+        <param name="occu_bound" value="50.5" />
+        <!-- -1 腐蚀 1 膨胀, a free b wall -->
+        <rosparam param="a_list" >[]</rosparam>
+        <rosparam param="b_list" >[]</rosparam>
+        <!-- <rosparam param="a_list" >[5, -4, -3, 2]</rosparam> -->
+        <rosparam param="a_list" >[]</rosparam>
+        <rosparam param="b_list" >[5, -3, 7]</rosparam>
+        <!-- <rosparam param="b_list" >[-3, ]</rosparam> -->
+        <!-- <rosparam param="b_list" >[7]</rosparam> -->
+    </node>
+    <node pkg="tf" type="static_transform_publisher" name="test_foot_2_lidar" args="0 0 0 -1.57 0 0 base_link velodyne 100" />
+</launch>

@@ -1,0 +1,9 @@
+<launch>
+    <param name="/use_sim_time" value="false" />
+    <arg name="save_path" default="/ros_ws/um-0613.chunkmap" />
+    <!-- <param name="/use_sim_time" value="true" /> -->
+    <node pkg="static_map_server" type="static_map_server_node" name="static_map_server" output="screen">
+        <param name="save_path" value="$(arg save_path)" />
+    </node>
+    <!-- <node pkg="rviz" type="rviz" name="rviz" output="screen" /> -->
+</launch>

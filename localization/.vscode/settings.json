@@ -1,0 +1,10 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/mnt/72fdbd1d-21d3-4b22-b9cc-54dbba43e6b0/dog/dogchunk_ws/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/mnt/72fdbd1d-21d3-4b22-b9cc-54dbba43e6b0/dog/dogchunk_ws/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages"
+    ]
+}

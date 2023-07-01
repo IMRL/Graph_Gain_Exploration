@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/mnt/72fdbd1d-21d3-4b22-b9cc-54dbba43e6b0/dog/dogchunk_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/mnt/72fdbd1d-21d3-4b22-b9cc-54dbba43e6b0/dog/dogchunk_ws/src/LidarAtlas/include/**",
+        "/mnt/72fdbd1d-21d3-4b22-b9cc-54dbba43e6b0/dog/dogchunk_ws/src/chunkmap/include/**",
+        "/mnt/72fdbd1d-21d3-4b22-b9cc-54dbba43e6b0/dog/dogchunk_ws/src/chunkmap_rviz/include/**",
+        "/mnt/72fdbd1d-21d3-4b22-b9cc-54dbba43e6b0/dog/dogchunk_ws/src/LeGO-LOAM/LeGO-LOAM/include/**",
+        "/mnt/72fdbd1d-21d3-4b22-b9cc-54dbba43e6b0/dog/dogchunk_ws/src/localization/include/**",
+        "/mnt/72fdbd1d-21d3-4b22-b9cc-54dbba43e6b0/dog/dogchunk_ws/src/static_map_server/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

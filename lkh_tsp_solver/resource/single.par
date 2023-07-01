@@ -1,0 +1,4 @@
+PROBLEM_FILE = /ros_ws/chunkmap_20221210_szz/src/lkh_tsp_solver/resource/single.tsp
+GAIN23 = NO
+OUTPUT_TOUR_FILE =/ros_ws/chunkmap_20221210_szz/src/lkh_tsp_solver/resource/single.txt
+RUNS = 1

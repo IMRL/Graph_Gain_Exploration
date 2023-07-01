@@ -1,0 +1,37 @@
+<launch>
+    
+    <!-- - Sim Time -->
+    <param name="/use_sim_time" value="false" />
+
+    <!-- <arg name="model" />
+      <arg name="gui" default="False" />
+      <param name="robot_description" textfile="$(find lego_loam)/urdf/car.urdf" />
+      <param name="use_gui" value="$(arg gui)"/>
+      <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
+      <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" /> -->
+   
+    <!-- <node pkg="nodelet" type="nodelet" name="velodyne_nodelet_manager"  args="manager"/>
+    <node pkg="nodelet" type="nodelet" name="cloud_nodelet" output="screen" args="load velodyne_pointcloud/CloudNodelet velodyne_nodelet_manager">
+      <remap from="/velodyne_packets" to = "/NJUST_Sensor/VelodyneScan"/>
+      <param name="calibration" value="$(find velodyne_pointcloud)/params/32db.yaml"/>
+      <param name="model" value="32E"/>
+    </node> -->
+
+
+
+    <!--- Run Rviz-->
+    <node pkg="rviz" type="rviz" name="rvizlego" args="-d $(find lego_loam)/launch/test.rviz" output="screen" />
+
+    <!--- TF -->
+    <node pkg="tf" type="static_transform_publisher" name="camera_init_to_map"  args="0 0 0 1.570795   0        1.570795 map    camera_init 10" />
+    <!-- <node pkg="tf" type="static_transform_publisher" name="base_link_to_camera" args="0 0 0 -1.570795 -1.570795 0        camera base_link   10" /> -->
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_camera" args="0 0 0 0 0 -1.570795        camera base_link   10" />
+    <node pkg="tf" type="static_transform_publisher" name="world_to_global_map" args="0 0 0 0 0 0 global_map map 10" />
+
+    <!--- LeGO-LOAM -->    
+    <node pkg="lego_loam" type="imageProjection"    name="imageProjection"    output="screen"/>
+    <node pkg="lego_loam" type="featureAssociation" name="featureAssociation" output="screen"/>
+    <node pkg="lego_loam" type="mapOptmization"     name="mapOptmization"     output="screen"/>
+    <node pkg="lego_loam" type="transformFusion"    name="transformFusion"    output="screen"/>
+
+</launch>

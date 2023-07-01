@@ -1,0 +1,20 @@
+material chunk_map/ChunkCell
+{
+  technique
+  {
+    pass
+    {
+      vertex_program_ref chunk_map/glsl120/chunk_cell.vert
+      {
+        param_named u_elevation int 0
+        param_named u_elevation_alpha float 0
+        param_named u_elevation_beta float 0
+      }
+
+      fragment_program_ref chunk_map/glsl120/chunk_cell.frag
+      {
+        param_named u_occupancy int 1
+      }
+    }
+  }
+}

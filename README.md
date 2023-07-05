@@ -2,7 +2,7 @@
 
 ## Concave-Hull Induced Graph-Gain for Fast and Robust Robotic Exploration
 
-The official implementation of "Concave-Hull Induced Graph-Gain for Fast and Robust Robotic Exploration"
+The official implementation of "Concave-Hull Induced Graph-Gain for Fast and Robust Robotic Exploration" by Zezhou Sun, Banghe Wu, Chengzhong Xu, and Hui Kong, accepted to IEEE Robotics and Automation Letter (RA-L), 2013
 
 <img width="613" alt="image" src="https://github.com/IMRL/Graph_Gain_Exploration/assets/67741955/04eec4af-a2ce-4417-b34e-9b0b6b85e1b4">
 
@@ -10,6 +10,7 @@ The official implementation of "Concave-Hull Induced Graph-Gain for Fast and Rob
 
 06/02/2023, The paper has been submitted for presentation on RAL 2023.
 07/01/2023, The code has been released.
+07/05/2023, The paper is accepted for publishing at IEEE RA-L.
 
 ## Installation
 

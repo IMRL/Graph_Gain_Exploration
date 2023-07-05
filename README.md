@@ -8,7 +8,7 @@ The official implementation of "Concave-Hull Induced Graph-Gain for Fast and Rob
 
 ## Update
 
-06/02/2023, The paper has been submitted for presentation on RAL 2023.
+03/02/2023, The paper has been submitted for presentation on RAL 2023.
 
 07/01/2023, The code has been released.
 
